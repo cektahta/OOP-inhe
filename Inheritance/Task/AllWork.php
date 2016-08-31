@@ -1,6 +1,6 @@
 <?php
 
-namespace AllWork;
+namespace Task;
 use Task\Task;
 class AllWork extends Task
 {
@@ -10,7 +10,8 @@ class AllWork extends Task
 
     public function __construct()
     {
-        self::$tasks[] = parent::__construct(name,hoursleft);
+        $this->freePlacesForTask = 10;
+        $this->currentUnnasignedTask = 0;
     }
 
     public function getTasks () {
@@ -25,13 +26,19 @@ class AllWork extends Task
         return $this->currentUnnasignedTask;
     }
 
+
+
     public function allWork()
     {
 
     }
 
-    public function addTask()
+    public function addTask(Task $task)
     {
+        if ($this->freePlacesForTask > 0) {
+            $this->$tasks[] = $task;
+            echo $task->getName();
+        }
 
     }
     public function getNextTask()

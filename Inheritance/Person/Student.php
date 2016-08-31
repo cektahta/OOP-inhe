@@ -1,5 +1,5 @@
 <?php
-namespace Student;
+namespace Person;
 
 class Student extends Person
 {
@@ -10,7 +10,12 @@ class Student extends Person
         $this->name = $name;
         $this->age = $age;
         $this->isMale = $isMale;
-        $this->price = $score;
+        if ($score < 2 || $score > 6) {
+            echo "bad score input";
+        } else {
+            $this->score = $score;
+        }
+
     }
 
 
@@ -25,7 +30,7 @@ class Student extends Person
     }
 
     public function showStudentInfo () {
-        echo "Name: $this->name->getName().'   '.Age: $this->age->getAge().'   '.Sex: $this->isMale->getIsMale().'  '.Score: $this->getScore()";
+        echo "Name: $this->name  Age: $this->age  Sex: $this->isMale  Score: $this->score";
     }
 
 

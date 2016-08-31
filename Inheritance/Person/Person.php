@@ -7,6 +7,13 @@ class Person
     protected $age;
     protected $isMale;
 
+    public function __construct($name,$age,$isMale)
+    {
+        $this->name = $name;
+        $this->age = $age;
+        $this->isMale = $isMale;
+    }
+
     public function getName()
     {
         return $this->name;
@@ -38,6 +45,6 @@ class Person
     }
 
     public function showPersonInfo () {
-        echo "Name: $this->getName().'   '.Age: $this->getAge().'   '.Sex: $this->getIsMale()";
+        echo "Name: $this->name Age: $this->age  Sex: $this->isMale";
     }
 }
